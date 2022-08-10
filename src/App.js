@@ -1,9 +1,16 @@
 import './styles/normalize.css';
-import './styles/style.css';
+import './styles/styles.css';
+import Header from './components/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div></div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

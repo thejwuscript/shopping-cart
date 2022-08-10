@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders correctly 1`] = `
+<div
+  className="logo-container"
+>
+  <h1
+    className="logo"
+  >
+    Games 'n Pieces
+  </h1>
+</div>
+`;
