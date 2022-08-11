@@ -7,6 +7,10 @@
   --color-yellow: #F9ED69;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: 'Sniglet', cursive;
 }
@@ -68,4 +72,20 @@ svg[data-icon="cart-shopping"] {
   align-items: center;
   top: 0;
   right: 0;
+}
+
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 48px;
+}
+
+#hero {
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border: 5px solid var(--color-purple);
 }
