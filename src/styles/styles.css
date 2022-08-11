@@ -39,10 +39,12 @@ a {
   font-size: larger;
 }
 
-.cart-container {
+.cart-wrapper {
   position: relative;
   width: 40px;
   height: 40px;
+  cursor: pointer;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
