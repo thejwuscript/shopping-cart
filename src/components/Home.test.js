@@ -8,4 +8,10 @@ describe('Home', () => {
     
     expect(image.src).toContain('hero.jpg');
   })
+
+  it('displays a welcome message', () => {
+    render(<Home />);
+    const message = screen.getByRole('heading', { name: 'Welcome!'});
+    expect(message).toBeInTheDocument();
+  })
 });
