@@ -1,26 +1,28 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import App from "./App";
 
-jest.mock('./components/Home.js', () => () => (
+jest.mock("./components/All.js", () => () => (
   <>
-    <h1>Home Screen</h1>
+    <p>All products page</p>
   </>
 ));
 
-jest.mock('./components/Shop', () => () => (
-  <>
-    <p>Shop page</p>
-  </>
-));
-
-describe('App', () => {
-  it('renders the Shop screen when the Shop link is clicked', async () => {
+describe("App", () => {
+  it("renders all products when the hero image is clicked", async () => {
     const user = userEvent.setup();
     render(<App />);
-    const link = screen.getByRole('link', { name: "Shop" });
+    const image = screen.getByAltText("hero");
+    await user.click(image);
+    expect(screen.getByText("All products page")).toBeInTheDocument();
+  });
+
+  it("renders all products when the Shop link is clicked", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const link = screen.getByRole("link", { name: "Shop" });
     await user.click(link);
-    expect(screen.getByText("Shop page")).toBeInTheDocument();
+    expect(screen.getByText("All products page")).toBeInTheDocument();
   });
 
   it('renders the Home screen when the Home link is clicked', async () => {
@@ -28,9 +30,7 @@ describe('App', () => {
     render(<App />);
     const link = screen.getByRole('link', { name: 'Home' });
     await user.click(link);
-    const heading = screen.getByRole('heading', { name: 'Home Screen'});
+    const heading = screen.getByRole('heading', { name: 'Welcome!'});
     expect(heading).toBeInTheDocument();
   });
-
-  
 });

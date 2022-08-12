@@ -24,6 +24,6 @@ describe('Home', () => {
   it('renders a link to the Shop page', () => {
     render(<MockHome />);
     const link = screen.getByRole('link')
-    expect(link).toHaveAttribute('href', '/shop');
+    expect(link).toHaveAttribute('href', '/shop/all');
   })
 });

@@ -11,7 +11,7 @@ export default function Header() {
       <Logo />
       <div className='header-right'>
         <Link to="/">Home</Link>
-        <Link to="/shop">Shop</Link>
+        <Link to="/shop/all">Shop</Link>
         <CartIcon count={4} />
       </div>
     </header>
