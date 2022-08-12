@@ -35,10 +35,4 @@ describe("All", () => {
     expect(await screen.findByText('Game One')).toBeInTheDocument();
     expect(await screen.findByText('Game Two')).toBeInTheDocument();
   });
-
-  // it('renders a list of games from all categories', async () => {
-  //   render(<All />);
-  //   expect(await screen.findByText('Game One')).toBeInTheDocument();
-  //   // expect(await screen.findByText('Game Two')).toBeInTheDocument();
-  // })
 });
