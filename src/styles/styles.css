@@ -126,10 +126,53 @@ nav > ul > li > a {
   justify-content: center;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(3, 260px);
-  grid-auto-rows: 260px;
+  grid-template-columns: repeat(3, 300px);
+  grid-auto-rows: 330px;
 }
 
 .game-item {
-  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  width: 220px;
+  height: 270px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  transition: transform 0.3s ease;
+}
+
+.game-item > h3 {
+  margin: 0 0 0 20px;
+  font-weight: normal;
+
+}
+
+.game-item > span {
+  margin: 0 0 0 20px;
+}
+
+.game-item > form {
+  margin: 0 0 0 20px;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.game-item > img {
+  align-self: center;
+}
+
+.game-item > form > button {
+  background-color: var(--color-yellow);
+  cursor: pointer;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.game-item:hover {
+  transform: scale(1.05);
 }
