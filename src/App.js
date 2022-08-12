@@ -29,7 +29,7 @@ function App() {
     <BrowserRouter basename="/">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/shopping-cart" element={<Home />} />
         <Route path="/shop" element={<Shop />}>
           <Route path="all" element={<All games={games} />} />
           <Route path="strategy" element={<Strategy />} />
