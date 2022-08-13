@@ -183,12 +183,20 @@ main {
 
 .drawer-container {
   width: 400px;
-  height: calc(700px - 100px);
+  height: 100%;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   top: 0;
   right: 0;
-  border: 2px solid red;
   box-sizing: border-box;
-  transform: translateX(400px);
-  
+  transform: translateX(100%);
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.drawer-container.active {
+  transform: translateX(0);
 }
