@@ -176,3 +176,19 @@ nav > ul > li > a {
 .game-item:hover {
   transform: scale(1.05);
 }
+
+main {
+  position: relative;
+}
+
+.drawer-container {
+  width: 400px;
+  height: calc(700px - 100px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid red;
+  box-sizing: border-box;
+  transform: translateX(400px);
+  
+}

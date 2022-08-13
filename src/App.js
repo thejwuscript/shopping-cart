@@ -1,6 +1,7 @@
 import "./styles/normalize.css";
 import "./styles/styles.css";
 import Header from "./components/Header";
+import CartDrawer from "./components/CartDrawer";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import All from "./components/All";
@@ -28,16 +29,19 @@ function App() {
   return (
     <BrowserRouter basename="/">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />}>
-          <Route path="all" element={<All games={games} />} />
-          <Route path="strategy" element={<Strategy />} />
-          <Route path="family" element={<Family />} />
-          <Route path="party" element={<Party />} />
-          <Route path="puzzle" element={<Puzzle />} />
-        </Route>
-      </Routes>
+      <main>
+        <CartDrawer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />}>
+            <Route path="all" element={<All games={games} />} />
+            <Route path="strategy" element={<Strategy />} />
+            <Route path="family" element={<Family />} />
+            <Route path="party" element={<Party />} />
+            <Route path="puzzle" element={<Puzzle />} />
+          </Route>
+        </Routes>
+      </main>
     </BrowserRouter>
   );
 }
