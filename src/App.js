@@ -21,6 +21,10 @@ function App() {
     cartVisibility ? setCartVisibility(false) : setCartVisibility(true);
   };
 
+  const handleAddSubmit = (gameObj) => {
+    setCartItems([...cartItems, gameObj])
+  }
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -36,11 +40,11 @@ function App() {
     <BrowserRouter basename="/">
       <Header onClick={handleCartClick} />
       <main>
-        <CartDrawer isVisible={cartVisibility} />
+        <CartDrawer isVisible={cartVisibility} items={cartItems} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />}>
-            <Route path="all" element={<All games={games} />} />
+            <Route path="all" element={<All games={games} onSubmit={handleAddSubmit}/>} />
             <Route path="strategy" element={<Strategy />} />
             <Route path="family" element={<Family />} />
             <Route path="party" element={<Party />} />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CartDrawer({ isVisible }) {
+export default function CartDrawer({ isVisible, items }) {
   let className;
 
   if (isVisible) {
@@ -10,6 +10,13 @@ export default function CartDrawer({ isVisible }) {
   };
 
   return (
-    <div className={className}>Your cart is empty.</div>
+    <div className={className}>
+      <h1>Shopping Cart</h1>
+      <ul>
+        {items.map(item => {
+          return <li>{item.name}</li>
+        })}
+      </ul>
+    </div>
   );
 };
