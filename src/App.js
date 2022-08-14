@@ -45,8 +45,8 @@ function App() {
       <main>
         <CartDrawer isVisible={cartVisibility} items={cartItems} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />}>
+          <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+          <Route path={process.env.PUBLIC_URL + "/shop"} element={<Shop />}>
             <Route path="all" element={<All games={games} onSubmit={handleAddSubmit}/>} />
             <Route path="strategy" element={<Strategy />} />
             <Route path="family" element={<Family />} />

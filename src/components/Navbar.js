@@ -11,7 +11,7 @@ export default function Navbar() {
       <ul>
         <li>
           <NavLink
-            to="/shop/all"
+            to={process.env.PUBLIC_URL + "/shop/all"}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
@@ -19,7 +19,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to="/shop/strategy"
+            to={process.env.PUBLIC_URL + "/shop/strategy"}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Strategy
@@ -27,7 +27,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to="/shop/family"
+            to={process.env.PUBLIC_URL + "/shop/family"}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Family
@@ -35,7 +35,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to="/shop/party"
+            to={process.env.PUBLIC_URL +"/shop/party"}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Party
@@ -43,7 +43,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to="/shop/puzzle"
+            to={process.env.PUBLIC_URL +"/shop/puzzle"}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Puzzle
