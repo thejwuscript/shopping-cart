@@ -10,7 +10,7 @@ export default function Header({ onClick }) {
     <header>
       <Logo />
       <div className='header-right'>
-        <Link to="/shopping-cart">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/shop/all">Shop</Link>
         <CartIcon count={4} onClick={onClick} />
       </div>
