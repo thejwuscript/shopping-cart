@@ -15,8 +15,9 @@ import React, { useState, useEffect } from "react";
 function App() {
   const [games, setGames] = useState([]);
   const [cartVisibility, setCartVisibility] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleClick = () => {
+  const handleCartClick = () => {
     cartVisibility ? setCartVisibility(false) : setCartVisibility(true);
   };
 
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <BrowserRouter basename="/">
-      <Header onClick={handleClick} />
+      <Header onClick={handleCartClick} />
       <main>
         <CartDrawer isVisible={cartVisibility} />
         <Routes>

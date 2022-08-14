@@ -183,7 +183,7 @@ main {
 
 .drawer-container {
   width: 400px;
-  height: 90%;
+  min-height: 600px;
   position: absolute;
   display: flex;
   flex-direction: column;
