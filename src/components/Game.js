@@ -15,7 +15,7 @@ export default function Game({ game, onSubmit }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          onSubmit(game, quantity);
+          (quantity > 0 && onSubmit(game, quantity));
         }}
       >
         <button type="submit">Add to Cart</button>
