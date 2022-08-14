@@ -197,7 +197,26 @@ main {
   transition: transform 0.3s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
+
 .drawer-container.active {
   transform: translateX(0);
   z-index: 9;
 }
+
+.drawer-container.active > hr {
+  width: 90%;
+}
+
+.drawer-container.active > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.drawer-container.active > ul > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  height: 100px;
+};
