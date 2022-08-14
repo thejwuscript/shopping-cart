@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function CartDrawer() {
-  const [visible, setVisible] = useState(false);
-  
+export default function CartDrawer({ isVisible }) {
+  let className;
+
+  if (isVisible) {
+    className = "drawer-container active";
+  } else {
+    className = "drawer-container";
+  };
+
   return (
-    <div className="drawer-container">Your cart is empty.</div>
+    <div className={className}>Your cart is empty.</div>
   );
 };

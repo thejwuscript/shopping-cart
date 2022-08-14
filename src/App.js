@@ -14,6 +14,11 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [games, setGames] = useState([]);
+  const [cartVisibility, setCartVisibility] = useState(false);
+
+  const handleClick = () => {
+    cartVisibility ? setCartVisibility(false) : setCartVisibility(true);
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -28,9 +33,9 @@ function App() {
 
   return (
     <BrowserRouter basename="/">
-      <Header />
+      <Header onClick={handleClick} />
       <main>
-        <CartDrawer />
+        <CartDrawer isVisible={cartVisibility} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />}>
