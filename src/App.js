@@ -21,8 +21,11 @@ function App() {
     cartVisibility ? setCartVisibility(false) : setCartVisibility(true);
   };
 
-  const handleAddSubmit = (gameObj) => {
-    setCartItems([...cartItems, gameObj])
+  const handleAddSubmit = (gameObj, quantity) => {
+    setCartItems([...cartItems, {
+      game: gameObj,
+      quantity: quantity,
+    }])
   }
 
   useEffect(() => {

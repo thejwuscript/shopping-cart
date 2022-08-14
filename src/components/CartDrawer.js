@@ -14,7 +14,7 @@ export default function CartDrawer({ isVisible, items }) {
       <h1>Shopping Cart</h1>
       <ul>
         {items.map(item => {
-          return <li>{item.name}</li>
+          return <li>{item.game.name} Qty:{item.quantity}</li>
         })}
       </ul>
     </div>
