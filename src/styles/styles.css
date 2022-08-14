@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap");
 
 :root {
-  --color-purple: #6A2C70;
-  --color-maroon: #B83B5E;
-  --color-orange: #F08A5D;
-  --color-yellow: #F9ED69;
+  --color-purple: #6a2c70;
+  --color-maroon: #b83b5e;
+  --color-orange: #f08a5d;
+  --color-yellow: #f9ed69;
 }
 
 html {
@@ -12,14 +12,14 @@ html {
 }
 
 body {
-  font-family: 'Sniglet', cursive;
+  font-family: "Sniglet", cursive;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #6A2C70;
+  background-color: #6a2c70;
   color: white;
   padding: 0 5%;
 }
@@ -61,7 +61,7 @@ svg[data-icon="cart-shopping"] {
 
 .badge {
   position: absolute;
-  background-color: #F08A5D;
+  background-color: #f08a5d;
   color: black;
   font-size: 0.9rem;
   border-radius: 50%;
@@ -146,7 +146,6 @@ nav > ul > li > a {
 .game-item > h3 {
   margin: 0 0 0 20px;
   font-weight: normal;
-
 }
 
 .game-item > span {
@@ -183,11 +182,11 @@ main {
 
 .drawer-container {
   width: 400px;
+  padding: 16px;
   min-height: 600px;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   top: 0;
   right: 0;
@@ -195,7 +194,8 @@ main {
   transform: translateX(100%);
   background-color: white;
   transition: transform 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
 .drawer-container.active {
@@ -203,20 +203,77 @@ main {
   z-index: 9;
 }
 
-.drawer-container.active > hr {
-  width: 90%;
-}
-
-.drawer-container.active > ul {
+.drawer-container > ul {
   margin: 0;
   padding: 0;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.drawer-container.active > ul > li {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+.drawer-container > h1 {
+  margin: 0 0 8px 0;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.drawer-container > ul > li {
   height: 100px;
-};
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.cart-item > img {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  justify-self: center;
+  align-self: center;
+}
+
+.game-title {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+  align-self: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.item-quantity {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.delete {
+  grid-column: 3 / 4;
+  margin-top: 2px;
+}
+
+.price {
+  grid-column: 4 / 5;
+  grid-row: 1 / 3;
+  justify-self: center;
+  align-self: center;
+  font-size: large;
+}
+
+.cart-subtotal {
+  align-self: flex-end;
+  margin-right: 20px;
+  font-size: larger;
+}
+
+.drawer-container > button {
+  background-color: #f08a5d;
+  margin-top: 20px;
+  border: none;
+  padding: 12px 100px;
+  border-radius: 5px;
+  color: white;
+  font-size: larger;
+  font-weight: normal;
+  cursor: pointer;
+}

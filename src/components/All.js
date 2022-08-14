@@ -5,7 +5,7 @@ export default function All({ games, onSubmit }) {
   return (
     <div>
       <ul className="games-grid-container">
-        {games.map( gameObj => <Game game={gameObj} onSubmit={onSubmit} />)}
+        {games.map( gameObj => <Game key={gameObj.id} game={gameObj} onSubmit={onSubmit} />)}
       </ul>
     </div>
   );

@@ -8,7 +8,7 @@ export default function Game({ game, onSubmit }) {
   }
   
   return (
-    <li key={game.id} className="game-item">
+    <li className="game-item">
       <img src={game.images.small} alt="" width={140} height={140} />
       <h3>{game.name}</h3>
       <span>${game.price_ca}</span>
