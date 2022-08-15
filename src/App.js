@@ -68,13 +68,13 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header onClick={handleCartClick} count={cartItems.length}/>
       <main>
         <CartDrawer isVisible={cartVisibility} items={cartItems} handleClick={handleDelete} />
         <Routes>
-          <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
-          <Route path={process.env.PUBLIC_URL + "/shop"} element={<Shop />}>
+          <Route path="/" element={<Home />} />
+          <Route path="shop" element={<Shop />}>
             <Route path="all" element={<All games={games} onSubmit={handleAddSubmit}/>} />
             <Route path="family" element={<Family games={familyGames} onSubmit={handleAddSubmit} />} />
             <Route path="party" element={<Party games={partyGames} onSubmit={handleAddSubmit}/>} />

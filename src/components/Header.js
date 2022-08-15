@@ -10,8 +10,8 @@ export default function Header({ onClick, count }) {
     <header>
       <Logo />
       <div className='header-right'>
-        <Link to={process.env.PUBLIC_URL +"/"}>Home</Link>
-        <Link to={process.env.PUBLIC_URL +"/shop/all"}>Shop</Link>
+        <Link to="/">Home</Link>
+        <Link to="/shop/all">Shop</Link>
         <CartIcon count={count} onClick={onClick} />
       </div>
     </header>

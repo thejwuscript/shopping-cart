@@ -11,7 +11,7 @@ export default function Navbar() {
       <ul>
         <li>
           <NavLink
-            to={process.env.PUBLIC_URL + "/shop/all"}
+            to="/shop/all"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
@@ -19,7 +19,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to={process.env.PUBLIC_URL + "/shop/family"}
+            to="/shop/family"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Family
@@ -27,7 +27,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to={process.env.PUBLIC_URL +"/shop/party"}
+            to="/shop/party"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Party
@@ -35,7 +35,7 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to={process.env.PUBLIC_URL +"/shop/medical"}
+            to="/shop/medical"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Medical
