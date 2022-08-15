@@ -56,12 +56,7 @@ function App() {
         "https://api.boardgameatlas.com/api/search?limit=30&order_by=rank&client_id=R7JYD2LOOW"
       );
       const data = await response.json();
-      const filtered = data.games.filter(game => {
-        let img = new Image();
-        img.src = game.image_url;
-        return img.width
-      });
-      setGames(filtered);
+      setGames(data.games);
     };
     
     fetchData();
