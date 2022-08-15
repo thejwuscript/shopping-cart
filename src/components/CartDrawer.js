@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function CartDrawer({ isVisible, items }) {
+  console.log(items);
   let className;
 
   if (isVisible) {
@@ -28,17 +29,18 @@ export default function CartDrawer({ isVisible, items }) {
               <span className="price">${item.game.price_ca}</span>
             </li>
           );
-        })}
+        }).reverse()}
       </ul>
-      <div className="cart-subtotal">
+      {items.length > 0 && <div className="cart-subtotal">
         <span>
           Subtotal: $
           {Math.floor(items.reduce((acc, item) => {
             return acc + item.game.price_ca * item.quantity;
           }, 0) * 100) / 100}
         </span>
-      </div>
-      <button type="button">Order Now</button>
+      </div>}
+      {items.length > 0 && <button type="button">Order Now</button>}
+      {items.length <= 0 && <p>No items in cart.</p>}
     </div>
   );
 }

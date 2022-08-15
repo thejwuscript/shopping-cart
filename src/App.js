@@ -22,10 +22,21 @@ function App() {
   };
 
   const handleAddSubmit = (gameObj, quantity) => {
-    setCartItems([...cartItems, {
-      game: gameObj,
-      quantity: quantity,
-    }])
+    setCartItems(prevItems => {
+      const existingItem = prevItems.find(
+        item => item.game.id === gameObj.id
+      );
+
+      if (existingItem) {
+        return prevItems.map(item =>
+          item.game.id === gameObj.id
+            ? { ...item, quantity: (Number(item.quantity) + Number(quantity)).toString() }
+            : item
+        );
+      } else {
+        return [...prevItems, { game: gameObj, quantity }];
+      }
+    })
   }
 
   useEffect(() => {
