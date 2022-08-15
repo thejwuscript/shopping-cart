@@ -250,6 +250,9 @@ main {
 .delete {
   grid-column: 3 / 4;
   margin-top: 2px;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
 }
 
 .price {

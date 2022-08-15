@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CartDrawer({ isVisible, items }) {
+export default function CartDrawer({ isVisible, items, handleClick }) {
   console.log(items);
   let className;
 
@@ -25,7 +25,7 @@ export default function CartDrawer({ isVisible, items }) {
               />
               <span className="game-title">{item.game.name}</span>
               <span className="item-quantity">Qty: {item.quantity}</span>
-              <small className="delete">Delete</small>
+              <small className="delete" onClick={() => handleClick(item.game)}>Delete</small>
               <span className="price">${item.game.price_ca}</span>
             </li>
           );

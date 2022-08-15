@@ -39,6 +39,12 @@ function App() {
     })
   }
 
+  const handleDelete = (gameObj) => {
+    setCartItems(prevItems => {
+      return prevItems.filter(item => item.game.id !== gameObj.id);
+    });
+  };
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
@@ -54,7 +60,7 @@ function App() {
     <BrowserRouter basename="/">
       <Header onClick={handleCartClick} />
       <main>
-        <CartDrawer isVisible={cartVisibility} items={cartItems} />
+        <CartDrawer isVisible={cartVisibility} items={cartItems} handleClick={handleDelete} />
         <Routes>
           <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
           <Route path={process.env.PUBLIC_URL + "/shop"} element={<Shop />}>
