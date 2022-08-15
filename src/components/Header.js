@@ -5,14 +5,14 @@ import CartIcon from './CartIcon';
 
 
 
-export default function Header({ onClick }) {
+export default function Header({ onClick, count }) {
   return (
     <header>
       <Logo />
       <div className='header-right'>
         <Link to={process.env.PUBLIC_URL +"/"}>Home</Link>
         <Link to={process.env.PUBLIC_URL +"/shop/all"}>Shop</Link>
-        <CartIcon count={4} onClick={onClick} />
+        <CartIcon count={count} onClick={onClick} />
       </div>
     </header>
   );

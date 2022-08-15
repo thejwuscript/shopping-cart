@@ -19,14 +19,6 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to={process.env.PUBLIC_URL + "/shop/strategy"}
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Strategy
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to={process.env.PUBLIC_URL + "/shop/family"}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
@@ -43,10 +35,10 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to={process.env.PUBLIC_URL +"/shop/puzzle"}
+            to={process.env.PUBLIC_URL +"/shop/medical"}
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Puzzle
+            Medical
           </NavLink>
         </li>
       </ul>

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function CartDrawer({ isVisible, items, handleClick }) {
-  console.log(items);
   let className;
 
   if (isVisible) {

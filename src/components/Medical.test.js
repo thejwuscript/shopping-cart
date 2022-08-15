@@ -1,8 +1,8 @@
 import { screen, render } from '@testing-library/react';
-import Strategy from './Strategy';
+import Medical from './Medical';
 
-describe('Strategy', () => {
+describe('Puzzle', () => {
   it('renders without crashing', () => {
-    render(<Strategy />);
+    render(<Medical />);
   });
 });

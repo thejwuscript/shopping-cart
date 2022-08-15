@@ -6,7 +6,7 @@ export default function CartIcon({ onClick, count }) {
   return (
     <div aria-label='shopping-cart' className="cart-wrapper" onClick={onClick}>
       <FontAwesomeIcon icon={faCartShopping} />
-      <span className='badge'>{count}</span>
+      {count > 0 && <span className='badge'>{count}</span>}
     </div>
   );
 };

@@ -5,10 +5,9 @@ import CartDrawer from "./components/CartDrawer";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import All from "./components/All";
-import Strategy from "./components/Strategy";
 import Family from "./components/Family";
 import Party from "./components/Party";
-import Puzzle from "./components/Puzzle";
+import Medical from "./components/Medical";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
@@ -16,6 +15,12 @@ function App() {
   const [games, setGames] = useState([]);
   const [cartVisibility, setCartVisibility] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+
+  const familyGames = games.filter((game) => game.categories.some((category) => category.id === "7rV11PKqME"))
+
+  const partyGames = games.filter((game) => game.categories.some((category) => category.id === "X8J7RM6dxX"))
+
+  const medicalGames = games.filter((game) => game.categories.some((category) => category.id === "AeWXMxbm91"))
 
   const handleCartClick = () => {
     cartVisibility ? setCartVisibility(false) : setCartVisibility(true);
@@ -48,27 +53,32 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://api.boardgameatlas.com/api/search?limit=9&order_by=rank&client_id=R7JYD2LOOW"
+        "https://api.boardgameatlas.com/api/search?limit=30&order_by=rank&client_id=R7JYD2LOOW"
       );
       const data = await response.json();
-      setGames(data.games);
-    }
+      const filtered = data.games.filter(game => {
+        let img = new Image();
+        img.src = game.image_url;
+        return img.width
+      });
+      setGames(filtered);
+    };
+    
     fetchData();
   }, []);
 
   return (
     <BrowserRouter basename="/">
-      <Header onClick={handleCartClick} />
+      <Header onClick={handleCartClick} count={cartItems.length}/>
       <main>
         <CartDrawer isVisible={cartVisibility} items={cartItems} handleClick={handleDelete} />
         <Routes>
           <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
           <Route path={process.env.PUBLIC_URL + "/shop"} element={<Shop />}>
             <Route path="all" element={<All games={games} onSubmit={handleAddSubmit}/>} />
-            <Route path="strategy" element={<Strategy />} />
-            <Route path="family" element={<Family />} />
-            <Route path="party" element={<Party />} />
-            <Route path="puzzle" element={<Puzzle />} />
+            <Route path="family" element={<Family games={familyGames} onSubmit={handleAddSubmit} />} />
+            <Route path="party" element={<Party games={partyGames} onSubmit={handleAddSubmit}/>} />
+            <Route path="medical" element={<Medical games={medicalGames} onSubmit={handleAddSubmit}/>} />
           </Route>
         </Routes>
       </main>
