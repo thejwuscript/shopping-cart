@@ -63,6 +63,7 @@ function App() {
         img.src = game.image_url;
         return img.naturalWidth > 0 && img.naturalHeight > 0;
       })
+      console.log(filtered);
       setGames(filtered);
     };
     fetchData();
