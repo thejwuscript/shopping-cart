@@ -58,10 +58,11 @@ function App() {
       const data = await response.json();
       console.log(data);
       let games = data.games;
-      let filtered = games.filter(game => {
+      let filtered = await games.filter(async (game) => {
         let img = new Image();
         img.src = game.image_url;
-        return img.naturalWidth > 0 && img.naturalHeight > 0;
+        await img.decode();
+        return img.naturalWidth > 0;
       })
       console.log(filtered);
       setGames(filtered);
