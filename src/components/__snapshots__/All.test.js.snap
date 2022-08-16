@@ -2,12 +2,92 @@
 
 exports[`All renders properly 1`] = `
 <div>
-  <ul>
-    <li>
-      Game One
+  <ul
+    className="games-grid-container"
+  >
+    <li
+      className="game-item"
+    >
+      <img
+        alt=""
+        height={140}
+        src="https://via.placeholder.com/150"
+        width={140}
+      />
+      <h3>
+        Game One
+      </h3>
+      <span>
+        $
+        10.00
+      </span>
+      <form
+        onSubmit={[Function]}
+      >
+        <button
+          type="submit"
+        >
+          Add to Cart
+        </button>
+        <div>
+          <label
+            htmlFor="quantity"
+          >
+            Qty: 
+          </label>
+          <input
+            id="quantity"
+            max={5}
+            min={0}
+            name="quantity"
+            onChange={[Function]}
+            type="number"
+            value=""
+          />
+        </div>
+      </form>
     </li>
-    <li>
-      Game Two
+    <li
+      className="game-item"
+    >
+      <img
+        alt=""
+        height={140}
+        src="https://via.placeholder.com/150"
+        width={140}
+      />
+      <h3>
+        Game Two
+      </h3>
+      <span>
+        $
+        20.00
+      </span>
+      <form
+        onSubmit={[Function]}
+      >
+        <button
+          type="submit"
+        >
+          Add to Cart
+        </button>
+        <div>
+          <label
+            htmlFor="quantity"
+          >
+            Qty: 
+          </label>
+          <input
+            id="quantity"
+            max={5}
+            min={0}
+            name="quantity"
+            onChange={[Function]}
+            type="number"
+            value=""
+          />
+        </div>
+      </form>
     </li>
   </ul>
 </div>

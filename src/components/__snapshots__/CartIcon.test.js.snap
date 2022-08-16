@@ -22,8 +22,5 @@ exports[`CartIcon renders correctly 1`] = `
       style={Object {}}
     />
   </svg>
-  <span
-    className="badge"
-  />
 </div>
 `;
