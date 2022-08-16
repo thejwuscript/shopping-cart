@@ -53,9 +53,10 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://api.boardgameatlas.com/api/search?limit=20&order_by=rank&client_id=R7JYD2LOOW"
+        "https://api.boardgameatlas.com/api/search?limit=10&order_by=rank&client_id=R7JYD2LOOW"
       );
       const data = await response.json();
+      console.log(data);
       let games = data.games;
       let filtered = games.filter(game => {
         let img = new Image();

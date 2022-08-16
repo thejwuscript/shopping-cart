@@ -13,6 +13,8 @@ html {
 
 body {
   font-family: "Sniglet", cursive;
+  width: 100vw;
+  overflow: hidden;
 }
 
 header {
