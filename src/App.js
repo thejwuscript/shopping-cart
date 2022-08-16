@@ -77,7 +77,7 @@ function App() {
         <CartDrawer isVisible={cartVisibility} items={cartItems} handleClick={handleDelete} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="shop" element={<Shop />}>
+          <Route path="/shop" element={<Shop />}>
             <Route path="all" element={<All games={games} onSubmit={handleAddSubmit}/>} />
             <Route path="family" element={<Family games={familyGames} onSubmit={handleAddSubmit} />} />
             <Route path="party" element={<Party games={partyGames} onSubmit={handleAddSubmit}/>} />
