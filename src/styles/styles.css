@@ -7,13 +7,19 @@
   --color-yellow: #f9ed69;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   overflow-y: scroll;
 }
 
 body {
   font-family: "Sniglet", cursive;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -133,7 +139,6 @@ nav > ul > li > a {
 }
 
 .game-item {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,7 +197,6 @@ main {
   align-items: center;
   top: 0;
   right: 0;
-  box-sizing: border-box;
   transform: translateX(100%);
   background-color: white;
   transition: transform 0.3s ease-in-out;

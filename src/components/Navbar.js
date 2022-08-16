@@ -19,18 +19,18 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
-            to="/shop/family"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Family
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/shop/party"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Party
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/shop/card"
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Card Games
           </NavLink>
         </li>
         <li>

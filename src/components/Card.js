@@ -1,7 +1,7 @@
 import React from 'react';
 import Game from './Game';
 
-export default function Family({ games, onSubmit }) {
+export default function Card({ games, onSubmit }) {
   return (
     <div>
       <ul className="games-grid-container">
