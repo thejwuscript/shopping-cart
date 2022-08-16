@@ -62,7 +62,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        "https://api.boardgameatlas.com/api/search?limit=18&order_by=rank&client_id=R7JYD2LOOW"
+        "https://api.boardgameatlas.com/api/search?limit=19&order_by=rank&client_id=R7JYD2LOOW"
       );
       const data = await response.json();
       let promises = data.games.map(async (game) => {
