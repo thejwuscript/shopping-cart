@@ -69,6 +69,7 @@ function App() {
   }, []);
 
   console.log(process.env.PUBLIC_URL);
+  console.log(games);
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
