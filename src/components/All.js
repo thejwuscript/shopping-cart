@@ -2,8 +2,6 @@ import React from "react";
 import Game from "./Game";
 
 export default function All({ games, onSubmit }) {
-  console.log(games);
-
   return (
     <div>
       <ul className="games-grid-container">
